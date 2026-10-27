@@ -1,0 +1,30 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+    tags: ['v*']
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node: [20, 22]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+          cache: npm
+      - run: npm ci
+      - run: npm test
+      - name: Smoke test demo mode
+        run: |
+          node src/index.js &
+          for i in $(seq 1 20); do curl -fsS http://127.0.0.1:8787/healthz && break; sleep 0.5; done
+          curl -fsS -X POST http://127.0.0.1:8787/session -H 'content-type: application/json' -d '{"external_ref":"CUST-DEMO-0001"}' | grep -q '"token":"cps_demo_'

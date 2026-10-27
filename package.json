@@ -1,0 +1,20 @@
+{
+  "name": "consenzy-example-session-server",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Example backend for the Consenzy mobile example apps: mints principal sessions and checks consent with the org API key, with a demo-mode mock of the Consenzy principal API.",
+  "license": "MIT",
+  "type": "module",
+  "main": "src/index.js",
+  "engines": {
+    "node": ">=20.10"
+  },
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "node --watch src/index.js",
+    "test": "node --test test/*.test.js"
+  },
+  "dependencies": {
+    "express": "4.21.2"
+  }
+}

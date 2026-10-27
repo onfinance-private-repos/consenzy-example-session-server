@@ -1,0 +1,97 @@
+{
+  "_comment": "Synthetic demo data only. No real people, organisations or keys. Shared by every Consenzy example app's demo mode.",
+  "principals": [
+    {
+      "external_ref": "CUST-DEMO-0001",
+      "principal_id": "0b7c6a52-1f0e-4c1e-9a3d-5d2f7e8a0001",
+      "label": "Asha (adult customer)",
+      "preferred_language": "en",
+      "acts_through_guardian": false,
+      "guardian_verified": false
+    },
+    {
+      "external_ref": "CUST-DEMO-CHILD-7",
+      "principal_id": "0b7c6a52-1f0e-4c1e-9a3d-5d2f7e8a0007",
+      "label": "Kabir, 12 (minor: consent by a verified guardian)",
+      "preferred_language": "en",
+      "acts_through_guardian": true,
+      "guardian_verified": true
+    }
+  ],
+  "notice": {
+    "id": "5e1d9c3a-7b2f-4a8e-b6c1-2f3e4d5a6b01",
+    "version": 3,
+    "translations": {
+      "en": {
+        "title": "How Demo Bank uses your personal data",
+        "body": "Demo Bank (a fictional Data Fiduciary) processes the personal data listed below only for the purposes you choose. You can withdraw consent at any time from Privacy settings, as easily as you gave it. You can ask for a summary of your data, correct or erase it, nominate someone, or raise a grievance with our Grievance Officer. If you are not satisfied, you may complain to the Data Protection Board of India.",
+        "purposes": {
+          "marketing": {
+            "name": "Marketing messages",
+            "description": "Send you offers on Demo Bank products by SMS, email and push notification."
+          },
+          "analytics": {
+            "name": "Product analytics",
+            "description": "Measure how you use the app so we can improve screens and fix problems."
+          },
+          "credit_offers": {
+            "name": "Pre-approved credit offers",
+            "description": "Use your transaction history to work out personalised loan and card offers."
+          }
+        }
+      },
+      "hi": {
+        "title": "डेमो बैंक आपके व्यक्तिगत डेटा का उपयोग कैसे करता है",
+        "body": "डेमो बैंक (एक काल्पनिक डेटा फ़िड्यूशरी) नीचे दिए गए व्यक्तिगत डेटा को केवल उन्हीं उद्देश्यों के लिए संसाधित करता है जिन्हें आप चुनते हैं। आप गोपनीयता सेटिंग्स से किसी भी समय अपनी सहमति उतनी ही आसानी से वापस ले सकते हैं जितनी आसानी से आपने दी थी। आप अपने डेटा का सारांश माँग सकते हैं, उसे सुधार या मिटा सकते हैं, किसी को नामित कर सकते हैं, या हमारे शिकायत अधिकारी के पास शिकायत दर्ज कर सकते हैं।",
+        "purposes": {
+          "marketing": {
+            "name": "मार्केटिंग संदेश",
+            "description": "एसएमएस, ईमेल और पुश नोटिफ़िकेशन से डेमो बैंक के उत्पादों के ऑफ़र भेजना।"
+          },
+          "analytics": {
+            "name": "उत्पाद विश्लेषण",
+            "description": "यह मापना कि आप ऐप का उपयोग कैसे करते हैं, ताकि हम स्क्रीन बेहतर बना सकें और समस्याएँ ठीक कर सकें।"
+          },
+          "credit_offers": {
+            "name": "पूर्व-स्वीकृत क्रेडिट ऑफ़र",
+            "description": "व्यक्तिगत ऋण और कार्ड ऑफ़र तय करने के लिए आपके लेन-देन इतिहास का उपयोग करना।"
+          }
+        }
+      }
+    }
+  },
+  "purposes": [
+    {
+      "id": "7a4b2c1d-3e5f-4a6b-8c9d-0e1f2a3b4c01",
+      "code": "marketing",
+      "data_categories": ["name", "email", "phone"],
+      "retention_days": 365
+    },
+    {
+      "id": "7a4b2c1d-3e5f-4a6b-8c9d-0e1f2a3b4c02",
+      "code": "analytics",
+      "data_categories": ["device_id", "app_usage"],
+      "retention_days": 180
+    },
+    {
+      "id": "7a4b2c1d-3e5f-4a6b-8c9d-0e1f2a3b4c03",
+      "code": "credit_offers",
+      "data_categories": ["transactions", "income"],
+      "retention_days": 730
+    }
+  ],
+  "seed_data_requests": [
+    {
+      "external_ref": "CUST-DEMO-0001",
+      "id": "9c8d7e6f-5a4b-4c3d-8e2f-1a0b9c8d0001",
+      "request_type": "erasure",
+      "status": "in_progress",
+      "channel": "whatsapp",
+      "channel_reference": "wamid.DEMO-0001",
+      "details": { "reason": "Closing my credit card" },
+      "received_days_ago": 4
+    }
+  ],
+  "request_sla_days": 90,
+  "status_progression_seconds": { "in_progress": 20, "completed": 60 }
+}
